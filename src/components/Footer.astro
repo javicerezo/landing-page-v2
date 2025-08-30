@@ -1,12 +1,20 @@
-<footer class="c-footer o-container-100">
-    <div class="c-footer__contenedor">
-        <ul class="c-footer__ul">
-            <li class="c-footer__li"><a href="#" target="_blank"><i class="fa-brands fa-facebook"></i></a></li>
-            <li class="c-footer__li"><a href="#" target="_blank"><i class="fa-brands fa-twitter"></i></a></li>
-            <li class="c-footer__li"><a href="#" target="_blank"><i class="fa-brands fa-youtube"></i></a></li>
-            <li class="c-footer__li"><a href="#" target="_blank"><i class="fa-brands fa-instagram"></i></a></li>
+---
+// Footer.astro
+import Facebook from "../components/icons/Facebook.astro";
+import Instagram from "../components/icons/Instagram.astro";
+import Twitter from "../components/icons/Twitter.astro";
+import Youtube from "../components/icons/Youtube.astro";
+---
+
+<footer class="bg-black text-white p-2">
+    <div class="mx-auto my-0 w-full flex flex-col justify-between items-center md:w-3/4">
+        <ul class="flex flex-row justify-center items-center p-2 gap-6">
+            <a href="#" target="_blank"><Facebook color="#fff"/></a>
+            <a href="#" target="_blank"><Twitter color="#fff"/></a>
+            <a href="#" target="_blank"><Youtube color="#fff"/></a>
+            <a href="#" target="_blank"><Instagram color="#fff"/></a>
         </ul>
-        <div class="c-footer__copy">
+        <div class="p-2">
             <p>1995-2023 Tienda de Esquí y montaña S.L. Todos los derechos reservados</p>
         </div>
     </div>

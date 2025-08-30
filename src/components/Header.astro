@@ -1,15 +1,37 @@
-<header class="c-header">
-    <div class="c-header__contenedor">
-        <div class="c-header__logo">
-            <div class="c-header__izq"></div>
-            <div class="c-header__der">
-                <p class="c-header__p">catálogo <span> 05-2023</span></p>
+---
+import Circle from "../components/icons/Circle.astro"
+import Menu from "../components/icons/Menu.astro"
+---
+
+<header class="w-full flex flex-row justify-center items-center">
+    <div class="flex flex-row justify-around items-center w-full md:p-1 md:w-4/5
+        lg:justify-between">
+    <div class="flex flex-col justify-between items-center sm:flex-row sm:p-0.5">
+            <div class="raya"></div>
+            <div class="pl-2">
+                <p class="uppercase font-bold">catálogo <span class="ml-0.5"> 05-2023</span></p>
             </div>
         </div>
-        <ul class="c-header__nav">
-            <li class="c-header__li"><a href="#c-seccion2"><i class="fa-solid fa-circle"></i></a></li>
-            <li class="c-header__li"><a href="#c-seccion4"><i class="fa-solid fa-circle"></i></a></li>
-            <li class="c-header__li"><a href="#c-seccion5"><i class="fa-solid fa-bars"></i></a></li>
+        <ul class="flex flex-row justify-center items-center gap-5">
+            <a class="max-w-xs" href="#c-seccion2"><Circle color="#000"/></a>
+            <a class="" href="#c-seccion4"><Circle color="#000"/></a>
+            <a class="p-2 circulo" href="#c-seccion5"><Menu /></a>
         </ul>
     </div>
 </header>
+
+<style >
+    .raya {
+        margin: 1rem 0;
+        border: 2px solid #000;
+        padding-right: 3rem;
+        border-radius: 5px;
+        @media (min-width: 768px) {
+            margin: 0;
+        }
+    }
+    .circulo {
+        background-color: var(--color-botones);
+        border-radius: 50%;
+    }
+</style>

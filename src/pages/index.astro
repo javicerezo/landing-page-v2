@@ -1,5 +1,5 @@
---- 
-import BaseLayout from "../layout/home.astro";
+---
+import Layout from "../layout/Layout.astro";
 import Portada from "../components/Portada.astro";
 import Section1 from "../components/Section1.astro";
 import Section2 from "../components/Section2.astro";
@@ -8,13 +8,13 @@ import Section4 from "../components/Section4.astro";
 import Section5 from "../components/Section5.astro";
 ---
 
-<BaseLayout title = "Nueva colección de Montaña" description = "Nueva colección de Montaña">
-	
-	<Portada></Portada>
-	<Section1></Section1>
-	<Section2></Section2>
-	<Section3></Section2>
-	<Section4></Section2>
-	<Section5></Section2>
+<Layout title = "Landing Page">
 
-</BaseLayout>
+	<Portada />
+	<Section1 />
+	<Section2 />
+	<Section3 />
+	<Section4 />
+	<Section5 />
+
+</Layout>
