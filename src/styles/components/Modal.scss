@@ -1,0 +1,58 @@
+@use '../settings/variables' as v;
+@use '../settings/mixins' as m;
+
+.Modal {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 1s ease, visibility 1s ease;
+    pointer-events: none;
+    &--mod {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: unset;
+    }
+    &__screen{
+        @include m.position (fixed, 0, 0, 0, 0);
+        z-index: 201;
+        @include m.flex (column, nowrap, center, center);
+        background-color: #111111bd;
+    }
+    &__li {
+        @include m.flex (column, nowrap, center, center);
+        position: relative;
+        padding: 1rem;
+        background-color: map-get(v.$colores, color-secundario);
+        color: map-get(v.$colores, color-primario);
+        border-radius: 5px;
+        width: 95%;
+        height: 95%;
+        @include m.telefono-xl {
+            @include m.flex (row, nowrap, space-around, center);
+            height: 80%;
+        }
+        @include m.tablet {
+            width: 85%;
+            height: 85%;
+        }
+        @include m.desktop {
+            width: 80%;
+            height: 90%;
+        }
+        &-close {
+            @include m.position (absolute, 2rem, null, null, 2rem);
+            font-size: 1.5rem;
+            cursor: pointer;
+            @include m.tablet {
+                font-size: 2rem;
+            }
+        }
+        &-mensaje {
+            position: absolute;
+            bottom: 1.5rem;
+            font-size: 1.5em;
+            @include m.telefono-xl {
+                bottom: 3rem;
+            }
+        }
+    }
+}
