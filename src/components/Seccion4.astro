@@ -1,0 +1,42 @@
+---
+import '../styles/components/Seccion4.scss';
+import CuadritoIzq from './ui/CuadritoIzq.astro';
+import CuadroBoton from './ui/CuadroBoton.astro';
+---
+
+<section class="Seccion4" id="Seccion4">
+    <div class="Seccion4__contenedor">
+        <div class="Seccion4__multimedia">
+            <div class="Seccion4__multimedia-arriba"></div>
+            <div class="Seccion4__multimedia-abajo"></div>
+            <div class="Seccion4__multimedia-imagen">
+                <img class="Seccion4__imagen" src="public/assets/imgs/nueva-coleccion/botas1.jpg" alt="imagen botas">
+            </div>
+            <div class="Seccion4__multimedia-descripcion">
+                <h3 class="Seccion4__titulo">características</h3>
+                <h3 class="Seccion4__titulo">técnicas</h3>
+                <ul class="Seccion4__texto">
+                    <li><p class="Seccion__texto-p">- Material de la carcasa inferior: Grilamid reforzado con fibra de vidrio.</p></li>
+                    <li><p class="Seccion__texto-p">- Material del puño: Grilamid reforzado con fibra de vidrio.</p></li>
+                    <li><p class="Seccion__texto-p">- Botín: Mezzalama Liner.</p></li>
+                    <li><p class="Seccion__texto-p">- Suela: Pomoca Race.</p></li>
+                    <li><p class="Seccion__texto-p">- Sistema de cierre Race Lock/Twistfit.</p></li>
+                    <li><p class="Seccion__texto-p">- Inclinación hacia delante 10º-13º + liberación para caminar.</p></li>
+                    <li><p class="Seccion__texto-p">- Sistema bota-fijacion Master Step.</p></li>
+                    <li><p class="Seccion__texto-p">- 875g (talla 26).</p></li>
+                </ul>
+                <div class="Seccion4__botones">
+                    <CuadroBoton text="Ver"/>
+                </div>
+            </div>
+        </div>
+        <div class="Seccion4__cuadrito">
+            <CuadritoIzq numero="04"/>
+        </div>
+    </div>
+    <div class="c-raya">
+        <div class="c-raya__contenedor">
+            <div class="c-raya__raya"></div>
+        </div>
+    </div>
+</section>

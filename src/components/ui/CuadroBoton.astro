@@ -4,13 +4,15 @@ import ArrowRight from '../icons/ArrowRight.astro';
 import Boton from './Boton.astro';
 
 import '../../styles/components/ui/CuadroBoton.scss';
+
+const { text } = Astro.props;
 ---
 
 <div>
     <div class="CuadroBoton__botones">
         <ArrowRight />
         <button class="CuadroBoton__botones-boton">
-            <Boton text="Ver"/>
+            <Boton text={text}/>
         </button>
     </div>
     <div class="CuadroBoton__decoracion">
