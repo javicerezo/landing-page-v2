@@ -2,7 +2,6 @@
 const { title } = Astro.props;
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
-import '../styles/global.css';
 ---
 
 <!DOCTYPE html>
@@ -25,16 +24,3 @@ import '../styles/global.css';
 	</body>
 </html>
 
-<!-- ESTILOS PARA COLORES GLOBALES -->
-<style is:global>
-	:root {
-		--color-botones: #a7a2d8a8;
-		--color-gris: #999;
-	}
-	html {
-
-	}
-	body {
-		font-family: Arial, Helvetica, sans-serif;
-	}
-</style>
