@@ -1,0 +1,27 @@
+---
+import CuadritoDer from "./ui/cuadritoDer.astro";
+import Boton from "./ui/Boton.astro";
+
+import '../styles/components/Seccion1.scss';
+---
+
+<section class="Seccion1">
+	<div class="Seccion1__contenedor">
+		<div class="Seccion1__contenedor-descripcion">
+			<div class="Seccion1__cuadrito c-cuadrito">
+				<CuadritoDer numero="01"/>
+			</div>
+				<h2 class="Seccion1__titulo">nueva coleccion</h2>
+				<p class="Seccion1__texto">Para esquiadores de montaña que buscan el mejor rendimiento
+					de unas botas mejoradas, con un peso extremadamente menor. La nueva colección de botas
+					Dynafit, ofrecen nuevas soluciones técnicas, que como resultado, mejoran la flexión.
+					Compatibles con todas las fijaciones de esquí de montaña del mercado.
+				<button class="Seccion1__boton">
+					<Boton text="ver"/>
+				</button>
+		</div>
+		<div class="Seccion1__contenedor-producto js-seccion1__contenedor-producto">
+							
+		</div> 
+	</div>
+</section>

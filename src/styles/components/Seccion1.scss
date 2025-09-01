@@ -1,0 +1,165 @@
+@use '../settings/variables' as v;
+@use '../settings/mixins' as m;
+
+.Seccion1 {
+    margin: 1rem 0;
+    @include m.desktop {
+        margin: 0 0 3rem;
+    }
+    &__contenedor {
+        position: relative;
+        width: 100%;
+        padding: 1rem;
+        @include m.flex (column, nowrap, space-between, center);
+        @include m.tablet {
+            width: 90%;
+            padding: 0;
+            @include m.flex (row, nowrap, center, center);
+        }
+        &-descripcion {
+            position: relative;
+            @include m.flex (column, nowrap, center, center);
+            @include m.tablet {
+                @include m.flex (column, nowrap, center, flex-start);
+                margin-left: 2rem;
+                max-width: 400px;
+            }
+            @include m.desktop {
+                margin-left: 5rem;
+            }
+            @include m.desktop-m {
+                margin-left: 10rem;
+            } 
+            @include m.desktop-xl {
+                max-width: 600px;
+            }           
+        }
+        &-producto {
+            position: relative;
+            margin-top: 3rem;
+            @include m.tablet {
+                width: 350px;
+                margin-top: 0;
+            }
+            @include m.desktop-xl {
+                max-width: 500px;
+            }
+        }
+    }
+    &__cuadrito {
+        @include m.position (absolute, 1.3994rem, null, null, -5.3563rem);
+    }
+    &__titulo {
+        text-transform: uppercase;
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+        @include m.telefono-xl {
+            font-size: 1.7rem;
+        }
+        @include m.desktop {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+        }
+    }
+    &__texto {
+        font-size: 0.8rem;
+        @include m.telefono-xl {
+            font-size: 0.9rem;
+        }
+        @include m.desktop {
+            font-size: 1rem;
+        }
+        @include m.desktop-xl {
+            font-size: 1.3rem;
+        }
+    }
+    &__boton {
+        margin: 2rem 0 2rem;
+        @include m.tablet {
+            margin: 4rem 0 2rem;
+        }
+    }
+    &__producto {
+        @include m.neomorfismo (map-get(v.$colores, color-secundario), map-get(v.$colores, color-secundario), 0.5rem, null, 0.5rem, map-get(v.$colores, color-primario-3), map-get(v.$colores, color-primario-3));
+        padding: 0.5rem;
+        @include m.telefono-xl {
+            padding: 2rem;
+        }
+        @include m.tablet {
+            @include m.position (relative, -7rem, -2rem, null, null); 
+        }
+        @include m.desktop {
+            right: -4rem;
+        }
+        @include m.desktop-m {
+            right: -5rem;
+        }
+        &-arriba, &-abajo {
+            margin: 0 auto;
+            width: 50%;
+            height: 10px;
+            background-color: map-get(v.$colores, color-primario-2);
+        }
+        &-arriba {
+            @include m.position (absolute, -0.75rem, 0, null, 0);
+            border-radius: 5px 5px 0 0;
+        }
+        &-abajo {
+            @include m.position (absolute, null, 0, -12px, 0);
+            border-radius: 0 0 5px 5px;
+        }
+    }
+    &__nombre {
+        padding: 0.5rem;
+        padding-bottom: 1rem;
+        &-h5 {
+            font-size: 1.2rem;
+            padding-bottom: 0.8rem;
+            @include m.desktop-xl {
+                font-size: 1.5rem;
+            }
+        }
+        &-h5:nth-child(2) {
+            text-transform: uppercase;
+            font-weight: bold;
+            padding-left: 1rem;
+        }
+        &-raya {
+            border: 1px solid #000;
+            width: 30%;
+            margin-left: 1.5rem;
+        }
+    }
+    &__listado {
+        @include m.flex (column, nowrap, center, flex-start);
+        margin-top: 1rem;
+        width: 100%;
+        @include m.tablet {
+            @include m.position (absolute, null, null, -1.5rem, -50%);
+            margin-top: 0;
+        }
+    }
+    &__ul, &__flechas {
+        @include m.flex (row, nowrap, center, center);
+    }
+    &__img {
+        max-width: 15.625rem;
+        @include m.desktop-xl {
+            max-width: 20rem;
+        }
+    }
+    &__divisor {
+        width: 90%;
+        margin: 1rem 0;
+        border: 2px solid #000;
+        border-radius: 5px;
+    }
+    &__li, &__flecha {
+        font-size: 0.7em;
+        padding: 0 0.5rem;
+        cursor: pointer;
+    }
+    &__flecha {
+        font-size: 1.5em;
+    }
+}
