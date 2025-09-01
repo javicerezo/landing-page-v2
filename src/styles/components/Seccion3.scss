@@ -1,0 +1,57 @@
+@use '../settings/variables' as v;
+@use '../settings/mixins' as m;
+
+.Seccion3 {
+    margin: 1rem 0;
+    @include m.desktop {
+        margin: 3rem 0;
+    }
+    &__contenedor {
+        position: relative;
+        width: 100%;
+        padding: 1rem;
+        @include m.flex (column, nowrap, space-between, center);
+        @include m.desktop {
+            width: 90%;
+            padding: 0;
+            @include m.flex (row, nowrap, space-between, center);
+        }
+        &-descripcion {
+            position: relative;
+            @include m.flex (column, nowrap, center, center);
+            @include m.desktop {
+                @include m.flex (column, nowrap, center, flex-start);
+                margin-left: 10rem;
+            }
+        }
+    }
+    &__cuadrito {
+        @include m.position (absolute, 1.3994rem, null, null, -5.3563rem);
+    }
+    &__titulo {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+        @include m.desktop {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+        }
+    }
+    &__titulo:nth-child(2) {
+        text-transform: capitalize;
+    }
+    &__titulo:nth-child(3) {
+        font-weight: normal;
+        margin-left: 3rem;
+    }
+    &__texto {
+        margin-top: 0.5rem;
+        font-size: 0.8rem;
+        @include m.desktop {
+            font-size: 1.1rem;
+        }
+    }
+    &__botones {
+        width: 100%;
+        @include m.flex (column, nowrap, center, flex-end);
+    }
+}

@@ -1,0 +1,52 @@
+@use '../../settings/variables' as v;
+@use '../../settings/mixins.scss' as m;
+
+.Botones {
+    &__botones {
+        @include m.flex (row, nowrap, flex-end, center);
+        margin-top: 3rem;
+        width: 100%;
+        &-flecha {
+            font-size: 1.5em;
+            @include m.desktop {
+                font-size: 2em;
+            }
+        }
+        &-boton {
+            margin-left: 3rem;
+        }
+    }
+    &__decoracion {
+        @include m.flex (row, nowrap, flex-end, center);
+        margin-top: 2rem;
+        width: 100%;
+        i {
+            font-size: 0.5em;
+            margin-right: 1rem;
+        }
+        &-contenedor {
+            position: relative;
+        }
+        &-raya{
+            border: 2px solid #000;
+            border-radius: 5px;
+            padding-right: 7rem;
+            max-width: 10rem;
+        }
+        &-arriba, &-abajo {
+            max-width: 5.25rem;
+            margin: 0 auto;
+            width: 50%;
+            height: 5px;
+            background-color: map-get(v.$colores, color-botones);
+        }
+        &-arriba {
+            @include m.position (absolute, -0.3125rem, 1rem, null, null);
+            border-radius: 5px 5px 0 0;
+        }
+        &-abajo {
+            @include m.position (absolute, null, 1rem, -0.3125rem, null);
+            border-radius: 0 0 5px 5px;
+        }
+    }
+}

@@ -1,0 +1,24 @@
+---
+import Circle from '../icons/Circle.astro';
+import ArrowRight from '../icons/ArrowRight.astro';
+import Boton from './Boton.astro';
+
+import '../../styles/components/ui/Botones.scss';
+---
+
+<div>
+    <div class="Botones__botones">
+        <ArrowRight />
+        <button class="Botones__botones-boton">
+            <Boton text="Ver"/>
+        </button>
+    </div>
+    <div class="Botones__decoracion">
+        <Circle />
+        <div class="Botones__decoracion-contenedor">
+            <div class="Botones__decoracion-raya"></div>
+            <div class="Botones__decoracion-arriba"></div>
+            <div class="Botones__decoracion-abajo"></div>
+        </div>
+    </div>
+</div>
