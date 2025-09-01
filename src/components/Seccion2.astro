@@ -1,0 +1,43 @@
+---
+import CuadritoIzq from "./ui/CuadritoIzq.astro";
+import Raya from "./ui/Raya.astro";
+
+import '../styles/components/Seccion2.scss';
+---
+
+<!-- <section class="mt-1 mb-1 lg:mt-3 lb:mb-3" id="Seccion2">
+    <div class="relative w-full p-1 flex flex-row justify-center items-center lg:w/5 lg:p-0">
+        <div class="w-full p-2 flex flex-row justify-center items-center lg:ml-4 lg:p-4  Seccion2__multimedia">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/Ey83JlMkyZ0"
+                title="YouTube video player" frameborder="0" allow="accelerometer; autoplay;
+                clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                allowfullscreen>
+            </iframe>
+        </div>
+        <CuadritoIzq numero="2"/>
+        <div class="Seccion2__raya"></div>
+    </div>
+    <Raya />
+</section> -->
+
+<section class="Seccion2" id="Seccion2">
+    <div class="Seccion2__contenedor">
+        <div class="Seccion2__multimedia">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/Ey83JlMkyZ0"
+                title="YouTube video player" frameborder="0" allow="accelerometer; autoplay;
+                clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                allowfullscreen>
+            </iframe>
+        </div>
+        <div class="Seccion2__cuadrito">
+            <CuadritoIzq numero="02"/>
+            <!-- <div class="c-cuadrito__contenedor--izq">
+                <div class="c-cuadrito__p--izq"><p>02</p></div>
+                <i class="c-cuadrito__i--izq fa-solid fa-arrow-down-long"></i>
+            </div> -->
+        </div>
+        <div class="Seccion2__raya"></div>
+        <Raya />
+    </div>
+    
+</section>

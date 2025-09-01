@@ -1,0 +1,22 @@
+@use '../../settings/variables' as v;
+@use '../../settings/mixins.scss' as m;
+
+.Cuadrito {
+    display: none;
+    @include m.desktop-m {
+        display: block;
+    }
+    &__contenedor--izq {
+        @include m.flex (column, nowrap, center, center);
+        padding-left: 2rem;
+    }
+    &__p--izq {
+        padding: 1rem 0;
+        padding-left: 2rem;
+        border-left: 2px solid #000;
+        font-weight: bold;
+    }
+    &__i--izq {
+        padding-left: 2rem;
+    }
+}

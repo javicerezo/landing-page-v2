@@ -1,0 +1,32 @@
+@use '../settings/variables' as v;
+@use '../settings/mixins' as m;
+
+.Seccion2 {
+    margin: 1rem 0;
+    @include m.desktop {
+        margin: 3rem 0;
+    }
+    &__contenedor {
+        position: relative;
+        width: 100%;
+        padding: 1rem;
+        @include m.flex (row, nowrap, center, center);
+        @include m.desktop {
+            width: 90%;
+            padding: 0;
+        }
+    }
+    &__multimedia {
+        width: 100%;
+        padding: 1rem;
+        @include m.flex (row, nowrap, center, center);
+        @include m.neomorfismo (map-get(v.$colores, color-secundario), map-get(v.$colores, color-secundario), 0.5rem, null, 0.5rem, map-get(v.$colores, color-primario-3), map-get(v.$colores, color-primario-3));
+        @include m.desktop {
+            margin-left: 10rem;
+            padding: 2rem;
+        }
+    }
+    &__cuadrito {
+        @include m.position (absolute, 1.3994rem, -5.3563rem, null, null);
+    }
+}

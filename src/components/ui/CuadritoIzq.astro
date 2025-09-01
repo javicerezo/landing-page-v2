@@ -1,0 +1,12 @@
+---
+const { numero } = Astro.props;
+
+import ArrowDown from "../icons/ArrowDown.astro";
+
+import '../../styles/components/ui/CuadritoIzq.scss';
+---
+
+<div class="Cuadrito Cuadrito__contenedor--izq">
+    <div class="Cuadrito__p--izq"><p>{numero}</p></div>
+    <ArrowDown class="Cuadrito__i--izq" />
+</div>
