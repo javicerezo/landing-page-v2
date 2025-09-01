@@ -1,29 +1,17 @@
-// import { botasColeccion } from "./db";
+import { botasColeccion } from "./db.js";
 
 // VARIABLES
 const contenedorProducto = document.querySelector('.js-seccion1__contenedor-producto');
-// const contenedorMensaje = document.querySelector('.js-seccion5__contenedor-mensaje');
-// const contenedorMensajeModal = document.querySelector('.js-modal__contenedor-mensaje');
 const contenedorModal =  document.querySelector('.js-modal');
-const inputNombreSeccion5 = document.querySelector('.js-seccion5__input-nombre');
-const inputCorreoSeccion5 = document.querySelector('.js-seccion5__input-correo');
-const formularioSeccion5 = document.querySelector('.js-seccion5__form');
 
 console.log(contenedorModal)
 
 let contador = 0;
-let infoCorreo = {
-    nombre: '',
-    correo: ''
-}
-const er = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/; 
-const time = 5000;
 
 // EVENTOS
 window.addEventListener('DOMContentLoaded', () => {
     cargarModalSuscripcion(time);
     cargarSeccion1();
-    
     
     const ulBolitas = document.querySelector('.js-seccion1__ul');
     cargarBolitas(ulBolitas);
@@ -52,33 +40,6 @@ window.addEventListener('DOMContentLoaded', () => {
         }
     });
 })
-
-inputNombreSeccion5.addEventListener('blur', rellenarCorreo);
-inputCorreoSeccion5.addEventListener('blur', rellenarCorreo);
-formularioSeccion5.addEventListener('submit', e => {
-    e.preventDefault();
-    enviarCorreo(e);
-    resetInputs();
-    resetFormulario(formularioSeccion5);
-}); 
-
-contenedorModal.addEventListener('click', e => {
-    const inputNombreModal = document.querySelector('.js-modal__input-nombre');
-    const inputCorreoModal = document.querySelector('.js-modal__input-email');
-    const formularioModal = document.querySelector('.js-modal__form');
-    if (e.target.classList.contains('fa-xmark') || e.target.classList.contains('c-modal__screen')) {
-        contenedorModal.classList.remove('c-modal--mod');
-        resetInputs();
-    }
-    inputNombreModal.addEventListener('blur', rellenarCorreo);
-    inputCorreoModal.addEventListener('blur', rellenarCorreo);
-    formularioModal.addEventListener('submit', e => {
-        e.preventDefault();
-        enviarCorreo(e);
-        resetInputs();
-        resetFormulario(formularioModal);
-    });
-});
 
 // FUNCIONES
 function cargarSeccion1 () {
@@ -140,13 +101,6 @@ function moverBolita (contenedor, id, direccion) {
         contenedor.children[id-1].children[0].classList.toggle('fa-regular');
     }
 }
-
-
-
-
-
-
-
 
 function cargarModalSuscripcion(tiempo) {
     setTimeout(() => {
