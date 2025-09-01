@@ -5,6 +5,7 @@
     margin: 1rem 0;
     @include m.desktop {
         margin: 0 0 3rem;
+        margin-top: 5rem;
     }
     &__contenedor {
         position: relative;
@@ -53,6 +54,7 @@
         text-transform: uppercase;
         font-size: 1.5rem;
         margin-bottom: 1rem;
+        font-weight: bold;
         @include m.telefono-xl {
             font-size: 1.7rem;
         }

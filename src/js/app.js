@@ -1,12 +1,15 @@
- 
+// import { botasColeccion } from "./db";
+
 // VARIABLES
 const contenedorProducto = document.querySelector('.js-seccion1__contenedor-producto');
-const contenedorMensaje = document.querySelector('.js-seccion5__contenedor-mensaje');
-const contenedorMensajeModal = document.querySelector('.js-modal__contenedor-mensaje');
+// const contenedorMensaje = document.querySelector('.js-seccion5__contenedor-mensaje');
+// const contenedorMensajeModal = document.querySelector('.js-modal__contenedor-mensaje');
 const contenedorModal =  document.querySelector('.js-modal');
 const inputNombreSeccion5 = document.querySelector('.js-seccion5__input-nombre');
 const inputCorreoSeccion5 = document.querySelector('.js-seccion5__input-correo');
 const formularioSeccion5 = document.querySelector('.js-seccion5__form');
+
+console.log(contenedorModal)
 
 let contador = 0;
 let infoCorreo = {
@@ -80,26 +83,26 @@ contenedorModal.addEventListener('click', e => {
 // FUNCIONES
 function cargarSeccion1 () {
     const producto = document.createElement('div');
-    producto.classList.add('c-seccion1__producto');
+    producto.classList.add('Seccion1__producto');
     producto.innerHTML = `
-        <div class="c-seccion1__producto-arriba"></div>
-        <div class="c-seccion1__producto-abajo"></div>
-        <div class="c-seccion1__nombre">
-            <h5 class="c-seccion1__nombre-h5">Dynafit</h5>
-            <h5 class="c-seccion1__nombre-h5 js-seccion1__nombre-h5">Mezzalama</h5>
-            <div class="c-seccion1__nombre-raya"></div>
+        <div class="Seccion1__producto-arriba"></div>
+        <div class="Seccion1__producto-abajo"></div>
+        <div class="Seccion1__nombre">
+            <h5 class="Seccion1__nombre-h5">Dynafit</h5>
+            <h5 class="Seccion1__nombre-h5 js-seccion1__nombre-h5">Mezzalama</h5>
+            <div class="Seccion1__nombre-raya"></div>
         </div>
-        <div class="c-seccion1__img js-seccion1__img">
+        <div class="Seccion1__img js-seccion1__img">
             <img src="public/assets/imgs/nueva-coleccion/botas0.jpg" alt="imagen botas">
         </div>
-        <div class="c-seccion1__listado">
-            <ul class="c-seccion1__ul js-seccion1__ul">
+        <div class="Seccion1__listado">
+            <ul class="Seccion1__ul js-seccion1__ul">
 
             </ul>
-            <div class="c-seccion1__divisor"></div>
-            <div class="c-seccion1__flechas js-seccion1__flechas">
-                <li class="c-seccion1__flecha"><i class="fa-solid fa-arrow-left-long"></i></li>
-                <li class="c-seccion1__flecha"><i class="fa-solid fa-arrow-right-long"></i></li>
+            <div class="Seccion1__divisor"></div>
+            <div class="Seccion1__flechas js-seccion1__flechas">
+                <li class="Seccion1__flecha"><i class="fa-solid fa-arrow-left-long"></i></li>
+                <li class="Seccion1__flecha"><i class="fa-solid fa-arrow-right-long"></i></li>
             </div>
         </div>
     `;
@@ -138,82 +141,17 @@ function moverBolita (contenedor, id, direccion) {
     }
 }
 
-function limpiarHTML (contenedor) {
-    while (contenedor.firstChild) {
-        contenedor.removeChild(contenedor.firstChild);
-    }
-}
 
-function rellenarCorreo (e) {
-    infoCorreo[e.target.name] = e.target.value.trim();
-    console.log(infoCorreo)
-}
 
-function enviarCorreo (e) {
-    const {nombre, correo} = infoCorreo;
-    const correoCorrecto = comprobarCorreo(correo);
-    let contenedor;
-    if(e.target.classList.contains('js-seccion5__form')) {
-        contenedor = contenedorMensaje;
-    }
-    if(e.target.classList.contains('js-modal__form')) {
-        contenedor = contenedorMensajeModal;
-    }
-    if(nombre !=='' && correoCorrecto === true){
-        mostrarMensaje(contenedor, 'exito', 'Se ha enviado correctamente');
-        setTimeout(() => {
-            contenedorModal.classList.remove('c-modal--mod');
-        }, 3500);
-    } else {
-        mostrarMensaje(contenedor, 'alerta', 'Error al rellenar los campos');
-    }
-}
 
-function comprobarCorreo (email) {
-    let correcto = false;
-    if (!er.test(email)){
-        return correcto;
-    } else {
-        correcto = true;
-        return correcto;
-    }
-}
 
-function mostrarMensaje (contenedorMensaje, tipo, mensaje) {
-    if(contenedorMensaje.childElementCount === 0) {
-        const p = document.createElement('p');
-        p.classList.add('u-mensaje');
-        p.dataset.cy = 'mensaje';
-        p.textContent = mensaje;
-        if (tipo === 'exito') {
-            p.classList.add(`u-mensaje--${tipo}`);
-        }
-        if (tipo === 'error') {
-            p.classList.add(`u-mensaje--${tipo}`);
-        }
-        if (tipo === 'alerta') {
-            p.classList.add(`u-mensaje--${tipo}`);
-        }
-        contenedorMensaje.appendChild(p);
-        setTimeout((e) => {
-            limpiarHTML(contenedorMensaje);
-        }, 10000);
-    }
-}
+
+
 
 function cargarModalSuscripcion(tiempo) {
     setTimeout(() => {
-        contenedorModal.classList.add('c-modal--mod');
+        contenedorModal.classList.add('Modal--mod');
     }, tiempo);
 }
 
-function resetInputs() {
-    infoCorreo.nombre = '';
-    infoCorreo.correo = '';
-};
 
-function resetFormulario (formulario){
-    setTimeout(() => {
-        formulario.reset();
-    }, 3000);
-};

@@ -1,7 +1,7 @@
 
 
 
-const botasColeccion = [
+export const botasColeccion = [
     {
         nombre: 'Mezzalama',
         src: 'public/assets/imgs/nueva-coleccion/botas0.jpg',
