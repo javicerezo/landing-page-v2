@@ -1,21 +1,24 @@
 ---
-import Boton from "./Boton.astro";
-import Circle from "../icons/Circle.astro";
-import Raya from "./Raya.astro";
-import ArrowRight from "../icons/ArrowRight.astro";
+import Circle from '../icons/Circle.astro';
+import ArrowRight from '../icons/ArrowRight.astro';
+import Boton from './Boton.astro';
+
+import '../../styles/components/ui/CuadroBoton.scss';
 ---
 
-<div class="relative">
-    <div class="flex flex-row justify-end items-center mt-4">
+<div>
+    <div class="CuadroBoton__botones">
         <ArrowRight />
-        <Boton text="comenzar"/>
+        <button class="CuadroBoton__botones-boton">
+            <Boton text="Ver"/>
+        </button>
     </div>
-    <div class="relative right-0 flex flex-row justify-end items-center mt-4">
+    <div class="CuadroBoton__decoracion">
         <Circle />
-        <div class="">
-            <Raya clase="relative ml-5"/>
-            <div class="c-boton2__decoracion-arriba"></div>
-            <div class="c-boton2__decoracion-abajo"></div>
+        <div class="CuadroBoton__decoracion-contenedor">
+            <div class="CuadroBoton__decoracion-raya"></div>
+            <div class="CuadroBoton__decoracion-arriba"></div>
+            <div class="CuadroBoton__decoracion-abajo"></div>
         </div>
     </div>
 </div>

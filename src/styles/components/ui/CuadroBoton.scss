@@ -1,7 +1,7 @@
 @use '../../settings/variables' as v;
 @use '../../settings/mixins.scss' as m;
 
-.Botones {
+.CuadroBoton {
     &__botones {
         @include m.flex (row, nowrap, flex-end, center);
         margin-top: 3rem;
