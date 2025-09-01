@@ -1,37 +1,22 @@
 ---
+import '../styles/components/Header.scss';
 import Circle from "../components/icons/Circle.astro"
 import Menu from "../components/icons/Menu.astro"
 ---
 
-<header class="w-full flex flex-row justify-center items-center">
-    <div class="flex flex-row justify-around items-center w-full md:p-2 md:w-4/5
-        lg:justify-between">
-    <div class="flex flex-col justify-between items-center sm:flex-row sm:p-0.5">
-            <div class="raya"></div>
-            <div class="pl-2">
-                <p class="uppercase font-bold">catálogo <span class="ml-0.5"> 05-2023</span></p>
+<header class="Header">
+    <div class="Header__contenedor">
+        <div class="Header__logo">
+            <div class="Header__izq"></div>
+            <div class="Header__der">
+                <p class="Header__p">catálogo <span> 05-2023</span></p>
             </div>
         </div>
-        <ul class="flex flex-row justify-center items-center gap-5">
-            <a class="max-w-xs" href="#c-seccion2"><Circle color="#000"/></a>
-            <a class="" href="#c-seccion4"><Circle color="#000"/></a>
-            <a class="p-2 circulo" href="#c-seccion5"><Menu /></a>
+        <ul class="Header__nav">
+            <li class="Header__li"><a href="#Seccion2"><Circle color="#000"/></a></li>
+            <li class="Header__li"><a href="#Seccion4"><Circle color="#000"/></a></li>
+            <li class="Header__li"><a href="#Seccion5"><Menu /></a></li>
         </ul>
     </div>
 </header>
 
-<style >
-    .raya {
-        margin: 1rem 0;
-        border: 2px solid #000;
-        padding-right: 3rem;
-        border-radius: 5px;
-        @media (min-width: 768px) {
-            margin: 0;
-        }
-    }
-    .circulo {
-        background-color: var(--color-botones);
-        border-radius: 50%;
-    }
-</style>
